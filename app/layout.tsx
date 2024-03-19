@@ -1,3 +1,8 @@
+import '@/app/ui/global.css';
+import { Inter } from 'next/font/google';
+
+export const inter = Inter({ subsets: ['latin'] }); 
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <title>Next.js | tutorial</title>
+      </head>
+      <body className={`${inter.className} antialised`}>{children}</body>
     </html>
   );
 }
